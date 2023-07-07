@@ -1,0 +1,230 @@
+/*** CSS base setup ***/
+html, body {
+  height: 100%;
+  min-width: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--black);
+}
+
+body {
+  line-height: 1;
+}
+
+* {
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+a {
+  display: inline-block;
+  width: auto;
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 400;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.btn, .explore__btn {
+  background: linear-gradient(0deg, rgba(147, 86, 220, 0.8) 0%, rgb(255, 121, 218) 100%);
+  padding: 0.8125rem 1rem;
+  border-radius: 999px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* section header */
+header {
+  position: relative;
+}
+
+.header__logo {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  padding: 0.875rem 0;
+  position: relative;
+  z-index: 10;
+}
+.header__logo--img {
+  height: 1.5rem;
+  width: auto;
+  margin: auto;
+}
+
+.header__localisation {
+  display: flex;
+  justify-content: center;
+  background: #EAEAEA;
+  padding: 0.96875rem 0;
+}
+.header__localisation i {
+  margin-right: 1rem;
+}
+.header__localisation p {
+  font-weight: 400;
+}
+
+.explore {
+  background-color: #F3F3F3;
+  text-align: center;
+  padding: 2.4375rem;
+}
+.explore__title {
+  font-size: 1.5rem;
+  margin-bottom: 1.6875rem;
+}
+.explore__subtitle {
+  font-size: 1.125rem;
+  font-weight: 300;
+  margin-bottom: 1.6875rem;
+}
+
+/* section features */
+.features {
+  padding: 3rem 1.25rem;
+}
+.features__title {
+  margin-bottom: 1.625rem;
+}
+.features__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+}
+
+.features__list__item {
+  position: relative;
+  background: #F3F3F3;
+  padding: 1.75rem 2.125rem;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  margin-left: 0.75rem;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+.features__list__item span {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.25rem 0.5rem;
+  background: #9356DC;
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+}
+.features__list__item i {
+  font-size: 1.3rem;
+  margin-right: 1rem;
+  color: #7e7e7e;
+}
+.features__list__item p {
+  font-weight: 500;
+}
+
+/* section restaurant */
+.restaurants {
+  padding: 3rem 1.125rem;
+  background-color: #F3F3F3;
+}
+.restaurants__title {
+  margin-bottom: 1.625rem;
+}
+
+.restaurants__list__item {
+  flex-basis: 100%;
+  background: white;
+  display: block;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+.restaurants__list__item__top {
+  position: relative;
+}
+.restaurants__list__item__top img {
+  border-radius: 1rem 1rem 0 0;
+  max-height: 12.5rem;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.restaurants__list__item__top span {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #99E2D0;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  color: #008766;
+  font-weight: 500;
+}
+
+.restaurants__list__item__bottom {
+  padding: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.restaurants__list__item__bottom__title {
+  margin-bottom: 0.3125rem;
+}
+.restaurants__list__item__bottom__city {
+  font-weight: 300;
+}
+.restaurants__list__item__bottom .restaurants__list__item__bottom__heart {
+  font-size: 1.5rem;
+  margin-right: 0.7625rem;
+}
+
+.footer {
+  background: #353535;
+  color: white;
+  padding: 1.5625rem;
+}
+.footer__logo {
+  height: 1rem;
+  width: auto;
+  margin-bottom: 1rem;
+}
+.footer__list__item {
+  margin-bottom: 0.5rem;
+}
+.footer__list__item:last-child {
+  margin-bottom: 0;
+}
+.footer__list__item a {
+  display: flex;
+  align-items: center;
+}
+.footer__list__item i {
+  min-width: 1.3rem;
+  font-size: 0.8rem;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,15 @@
+$background: #F6F6F6;
+$secondary: #FCA311;
+$lightGrey: #F3F3F3;
+$grey: #EAEAEA;
+$lightGreen: #99E2D0;
+$darkGrey: #7e7e7e;
+$veryDarkGrey: #353535;
+$green: #008766;
+$lightBlue: #89C8FA;
+$blue: #003A68;
+$primary: #9356DC;
+
+@mixin btnShadow {
+    box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.15);
+}
