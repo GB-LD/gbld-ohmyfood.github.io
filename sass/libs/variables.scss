@@ -10,6 +10,8 @@ $lightBlue: #89C8FA;
 $blue: #003A68;
 $primary: #9356DC;
 
+$breakpoint-tablet: 768px;
+
 @mixin btnShadow {
     box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.15);
 }
