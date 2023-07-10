@@ -2,7 +2,6 @@
 @import './libs/variables.scss';
 @import './libs/components.scss';
 
-
 /* section header */
 
 header {
@@ -209,14 +208,39 @@ header {
     color: white;
     padding: 1.5625rem;
 
+    @media (min-width: $breakpoint-tablet) {
+        display: flex;
+        justify-content: end;
+        align-items: end;
+    }
+
     &__logo {
         height: 1rem;
         width: auto;
         margin-bottom: 1rem;
+
+        @media (min-width: $breakpoint-tablet) {
+            order: 2;
+            margin-left: 2rem;
+            margin-bottom: 0;
+        }
+    }
+
+    &__list {
+        @media (min-width: $breakpoint-tablet) {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
     }
 
     &__list__item {
         margin-bottom: .5rem;
+
+        @media (min-width: $breakpoint-tablet) {
+            margin-left: 2rem;
+            margin-bottom: 0;
+        }
 
         &:last-child {
             margin-bottom: 0;

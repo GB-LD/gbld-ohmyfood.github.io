@@ -244,13 +244,40 @@ header {
   color: white;
   padding: 1.5625rem;
 }
+@media (min-width: 768px) {
+  .footer {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+  }
+}
 .footer__logo {
   height: 1rem;
   width: auto;
   margin-bottom: 1rem;
 }
+@media (min-width: 768px) {
+  .footer__logo {
+    order: 2;
+    margin-left: 2rem;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 768px) {
+  .footer__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
 .footer__list__item {
   margin-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .footer__list__item {
+    margin-left: 2rem;
+    margin-bottom: 0;
+  }
 }
 .footer__list__item:last-child {
   margin-bottom: 0;
