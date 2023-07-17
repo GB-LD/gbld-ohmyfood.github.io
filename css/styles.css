@@ -58,6 +58,22 @@ ul {
   font-size: 1rem;
   font-weight: 500;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+.btn::after, .explore__btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 999px;
+  background: white;
+  opacity: 0;
+  transition: opacity 250ms;
+}
+.btn:hover::after, .explore__btn:hover::after {
+  opacity: 0.15;
 }
 
 /* section header */
@@ -237,6 +253,46 @@ header {
 .restaurants__list__item__bottom .restaurants__list__item__bottom__heart {
   font-size: 1.5rem;
   margin-right: 0.7625rem;
+}
+
+.restaurants__list__item__bottom__favorite {
+  position: relative;
+}
+.restaurants__list__item__bottom__favorite #heart-check-1,
+.restaurants__list__item__bottom__favorite #heart-check-2,
+.restaurants__list__item__bottom__favorite #heart-check-3,
+.restaurants__list__item__bottom__favorite #heart-check-4 {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+.restaurants__list__item__bottom__favorite #heart-check-1:checked ~ .open,
+.restaurants__list__item__bottom__favorite #heart-check-2:checked ~ .open,
+.restaurants__list__item__bottom__favorite #heart-check-3:checked ~ .open,
+.restaurants__list__item__bottom__favorite #heart-check-4:checked ~ .open {
+  font-size: 2rem;
+  background: linear-gradient(180deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.restaurants__list__item__bottom__favorite #heart-check-1:checked ~ .close,
+.restaurants__list__item__bottom__favorite #heart-check-2:checked ~ .close,
+.restaurants__list__item__bottom__favorite #heart-check-3:checked ~ .close,
+.restaurants__list__item__bottom__favorite #heart-check-4:checked ~ .close {
+  display: none;
+}
+.restaurants__list__item__bottom__favorite #heart-check-1:not(:checked) ~ .open,
+.restaurants__list__item__bottom__favorite #heart-check-2:not(:checked) ~ .open,
+.restaurants__list__item__bottom__favorite #heart-check-3:not(:checked) ~ .open,
+.restaurants__list__item__bottom__favorite #heart-check-4:not(:checked) ~ .open {
+  display: none;
+}
+.restaurants__list__item__bottom__favorite #heart-check-1:not(:checked) ~ .close,
+.restaurants__list__item__bottom__favorite #heart-check-2:not(:checked) ~ .close,
+.restaurants__list__item__bottom__favorite #heart-check-3:not(:checked) ~ .close,
+.restaurants__list__item__bottom__favorite #heart-check-4:not(:checked) ~ .close {
+  font-size: 2rem;
+  display: block;
 }
 
 .footer {

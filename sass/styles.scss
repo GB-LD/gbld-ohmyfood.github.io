@@ -203,6 +203,51 @@ header {
     }
 }
 
+.restaurants__list__item__bottom__favorite {
+    position: relative;
+
+    #heart-check-1, 
+    #heart-check-2,
+    #heart-check-3, 
+    #heart-check-4 {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+    }
+
+    #heart-check-1:checked ~ .open, 
+    #heart-check-2:checked ~ .open,
+    #heart-check-3:checked ~ .open, 
+    #heart-check-4:checked ~ .open {
+        font-size: 2rem;
+        background: linear-gradient(180deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #heart-check-1:checked ~ .close,
+    #heart-check-2:checked ~ .close,
+    #heart-check-3:checked ~ .close,
+    #heart-check-4:checked ~ .close {
+        display: none;
+    }
+
+    #heart-check-1:not(:checked) ~ .open,
+    #heart-check-2:not(:checked) ~ .open,
+    #heart-check-3:not(:checked) ~ .open,
+    #heart-check-4:not(:checked) ~ .open {
+        display: none;
+    }
+
+    #heart-check-1:not(:checked) ~ .close, 
+    #heart-check-2:not(:checked) ~ .close,
+    #heart-check-3:not(:checked) ~ .close, 
+    #heart-check-4:not(:checked) ~ .close  {
+        font-size: 2rem;
+        display: block;
+    }
+}
+
 .footer {
     background: $veryDarkGrey;
     color: white;
