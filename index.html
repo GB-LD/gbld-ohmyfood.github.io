@@ -11,7 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="wrapper">
@@ -57,21 +59,23 @@
                     <h2 class="restaurants__title">Restaurants</h2>
                     <ul class="restaurants__list">
                         <li class="restaurants__list__item">
-                            <div class="restaurants__list__item__top">
-                                <img src="./assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo du restaurant la palette du goût">
-                                <span>Nouveau</span>
-                            </div>
-                            <div class="restaurants__list__item__bottom">
-                                <div>
-                                    <h3 class="restaurants__list__item__bottom__title">La palette du goût</h3>
-                                    <h4 class="restaurants__list__item__bottom__city">Ménilmontant</h4>
+                            <a class="restaurants__list__item__link" href="./restaurants/lpdg.html">
+                                <div class="restaurants__list__item__top">
+                                    <img src="./assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo du restaurant la palette du goût">
+                                    <span>Nouveau</span>
                                 </div>
-                                <label class="restaurants__list__item__bottom__favorite" for="heart-check-1">
-                                    <input type="checkbox" id="heart-check-1">
-                                    <i class="fa-regular fa-heart close"></i>
-                                    <i class="fa-solid fa-heart open"></i>
-                                </label>
-                            </div>
+                                <div class="restaurants__list__item__bottom">
+                                    <div>
+                                        <h3 class="restaurants__list__item__bottom__title">La palette du goût</h3>
+                                        <h4 class="restaurants__list__item__bottom__city">Ménilmontant</h4>
+                                    </div>
+                                    <label class="restaurants__list__item__bottom__favorite" for="heart-check-1">
+                                        <input type="checkbox" id="heart-check-1">
+                                        <i class="fa-regular fa-heart close"></i>
+                                        <i class="fa-solid fa-heart open"></i>
+                                    </label>
+                                </div>
+                            </a>
                         </li>
                         <li class="restaurants__list__item">
                             <div class="restaurants__list__item__top">

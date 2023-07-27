@@ -27,3 +27,22 @@
         }
     }
 }
+
+.card {
+    background: white;
+    padding: .75rem 1rem;
+    border-radius: 15px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    h3 {
+        flex: 1 1 100%;
+        margin-bottom: .3rem;
+    }
+
+    p {
+        font-weight: 300;
+    }
+}
