@@ -76,7 +76,7 @@ ul {
   opacity: 0.15;
 }
 
-.card, section .restaurant__entrance__list > *, section .restaurant__maincourse__list > *, section .restaurant__desert__list > * {
+.card, .restaurant__entrance .restaurant__entrance__list > *, .restaurant__entrance .restaurant__maincourse__list > *, .restaurant__entrance .restaurant__desert__list > *, .restaurant__maincourse .restaurant__entrance__list > *, .restaurant__maincourse .restaurant__maincourse__list > *, .restaurant__maincourse .restaurant__desert__list > *, .restaurant__desert .restaurant__entrance__list > *, .restaurant__desert .restaurant__maincourse__list > *, .restaurant__desert .restaurant__desert__list > * {
   background: white;
   padding: 0.75rem 1rem;
   border-radius: 15px;
@@ -84,11 +84,11 @@ ul {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.card h3, section .restaurant__entrance__list > * h3, section .restaurant__maincourse__list > * h3, section .restaurant__desert__list > * h3 {
+.card h3, .restaurant__entrance .restaurant__entrance__list > * h3, .restaurant__entrance .restaurant__maincourse__list > * h3, .restaurant__entrance .restaurant__desert__list > * h3, .restaurant__maincourse .restaurant__entrance__list > * h3, .restaurant__maincourse .restaurant__maincourse__list > * h3, .restaurant__maincourse .restaurant__desert__list > * h3, .restaurant__desert .restaurant__entrance__list > * h3, .restaurant__desert .restaurant__maincourse__list > * h3, .restaurant__desert .restaurant__desert__list > * h3 {
   flex: 1 1 100%;
   margin-bottom: 0.3rem;
 }
-.card p, section .restaurant__entrance__list > * p, section .restaurant__maincourse__list > * p, section .restaurant__desert__list > * p {
+.card p, .restaurant__entrance .restaurant__entrance__list > * p, .restaurant__entrance .restaurant__maincourse__list > * p, .restaurant__entrance .restaurant__desert__list > * p, .restaurant__maincourse .restaurant__entrance__list > * p, .restaurant__maincourse .restaurant__maincourse__list > * p, .restaurant__maincourse .restaurant__desert__list > * p, .restaurant__desert .restaurant__entrance__list > * p, .restaurant__desert .restaurant__maincourse__list > * p, .restaurant__desert .restaurant__desert__list > * p {
   font-weight: 300;
 }
 
@@ -129,12 +129,26 @@ ul {
 .main_restaurant {
   position: relative;
   background: #F3F3F3;
-  top: -2.5rem;
   left: 50%;
-  transform: translate(-50%);
-  border-radius: 40px 40px 0 0;
-  padding: 2rem 0.8125rem;
+  transform: translateX(-50%);
+  padding: 0 0.8125rem 2rem 0.8125rem;
   max-width: 1055px;
+}
+.main_restaurant::before {
+  content: "";
+  height: 3rem;
+  width: 100%;
+  background: #F3F3F3;
+  position: absolute;
+  top: -2.9rem;
+  left: 0;
+  border-radius: 25px 25px 0 0;
+}
+@media (min-width: 768px) {
+  .main_restaurant::before {
+    height: 4rem;
+    top: -3.9rem;
+  }
 }
 
 .restaurant__header__title {
@@ -162,16 +176,16 @@ ul {
   margin-right: 2rem;
 }
 
-section {
+.restaurant__entrance, .restaurant__maincourse, .restaurant__desert {
   margin-bottom: 2.5rem;
 }
-section h2 {
+.restaurant__entrance h2, .restaurant__maincourse h2, .restaurant__desert h2 {
   font-weight: 300;
   text-transform: uppercase;
   position: relative;
   margin-bottom: 2rem;
 }
-section h2::after {
+.restaurant__entrance h2::after, .restaurant__maincourse h2::after, .restaurant__desert h2::after {
   content: "";
   position: absolute;
   bottom: -0.5rem;
@@ -180,7 +194,7 @@ section h2::after {
   width: 3.5rem;
   background-color: #99E2D0;
 }
-section .restaurant__entrance__list > *, section .restaurant__maincourse__list > *, section .restaurant__desert__list > * {
+.restaurant__entrance .restaurant__entrance__list > *, .restaurant__entrance .restaurant__maincourse__list > *, .restaurant__entrance .restaurant__desert__list > *, .restaurant__maincourse .restaurant__entrance__list > *, .restaurant__maincourse .restaurant__maincourse__list > *, .restaurant__maincourse .restaurant__desert__list > *, .restaurant__desert .restaurant__entrance__list > *, .restaurant__desert .restaurant__maincourse__list > *, .restaurant__desert .restaurant__desert__list > * {
   margin-bottom: 1rem;
 }
 

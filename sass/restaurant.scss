@@ -41,12 +41,27 @@
 .main_restaurant {
     position: relative;
     background: $lightGrey;
-    top: -2.5rem;
     left: 50%;
-    transform: translate(-50%);
-    border-radius: 40px 40px 0 0;
-    padding: 2rem .8125rem;
+    transform: translateX(-50%);
+    padding: 0 .8125rem 2rem .8125rem;
     max-width: 1055px;
+    
+    &::before {
+        content: '';
+        height: 3rem;
+        width: 100%;
+        background: $lightGrey;
+        position: absolute;
+        top: -2.9rem;
+        left: 0;
+        border-radius: 25px 25px 0 0;
+
+        @media (min-width: $breakpoint-tablet) {
+            height: 4rem;
+            top: -3.9rem;
+        }
+
+    }
 }
 
 .restaurant__header__title {
@@ -75,7 +90,7 @@
     }
 }
 
-section {
+.restaurant__entrance, .restaurant__maincourse, .restaurant__desert  {
     margin-bottom: 2.5rem;
 
     h2 {
