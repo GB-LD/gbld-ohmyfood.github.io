@@ -1,0 +1,307 @@
+/* section header */
+
+header {
+    position: relative;
+}
+
+.header__logo {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    padding: 1.875rem 0;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &--img {
+        height: 1.5rem;
+        width: auto;
+    }
+}
+
+.header__localisation {
+    display: flex;
+    justify-content: center;
+    background: $grey;
+    padding: .96875rem 0;
+
+    i {
+        margin-right: 1rem;
+    }
+
+    p {
+        font-weight: 400;
+    }
+}
+
+.explore {
+    background-color: $lightGrey;
+    text-align: center;
+    padding: 2.4375rem;
+
+    &__title {
+        font-size: 1.5rem;
+        margin-bottom: 1.6875rem;
+    }
+
+    &__subtitle {
+        font-size: 1.125rem;
+        font-weight: 300;
+        margin-bottom: 1.6875rem;
+    }
+}
+
+.explore__btn {
+    @extend .btn;
+}
+
+/* section features */
+
+.features {
+    padding: 3rem 1.25rem;
+
+    &__wrapper {
+        @media (min-width: $breakpoint-tablet) {
+            max-width: 1080px;
+            margin: auto;
+        }
+    }
+
+    &__title {
+        margin-bottom: 1.625rem;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5625rem;
+
+        @media (min-width: $breakpoint-tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
+
+.features__list__item {
+    position: relative;
+    background: $lightGrey;
+    padding: 1.75rem 2.125rem;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    margin-left: .75rem;
+    @include btnShadow;
+
+    @media (min-width: $breakpoint-tablet) {
+        flex: 1;
+    }
+
+    span {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: .25rem .5rem;
+        background: $primary;
+        color: white;
+        border-radius: 9999px;
+        font-size: .9rem;
+    }
+
+    i {
+        font-size: 1.3rem;
+        margin-right: 1rem;
+        color: $darkGrey;
+    }
+
+    p {
+        font-weight: 500;
+    }
+}
+
+/* section restaurant */
+
+.restaurants {
+    padding: 3rem 1.125rem;
+    background-color: $lightGrey;
+
+    &__wrapper {
+        @media (min-width: $breakpoint-tablet) {
+            max-width: 1080px;
+            margin: auto;
+        }
+    }
+
+    &__title {
+        margin-bottom: 1.625rem;
+    }
+
+    &__list {
+        @media (min-width: $breakpoint-tablet) {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+    }
+}
+
+.restaurants__list__item {
+    flex-basis: 100%;
+    background: white;
+    display: block;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+
+    @media (min-width: $breakpoint-tablet) {
+        flex: 1 1 40%;
+    }
+
+    &__link {
+        width: 100%;
+    }
+}
+
+.restaurants__list__item__top {
+    position: relative;
+
+    img {
+        border-radius: 1rem 1rem 0 0;
+        max-height: 12.5rem;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    span {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: $lightGreen;
+        padding: .5rem;
+        border-radius: .2rem;
+        font-size: .8rem;
+        color: $green;
+        font-weight: 500;
+    }
+}
+
+.restaurants__list__item__bottom {
+    padding: .8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+        margin-bottom: .3125rem;
+    }
+
+    &__city {
+        font-weight: 300;
+    }
+
+    .restaurants__list__item__bottom__heart {
+        font-size: 1.5rem;
+        margin-right: calc(1.5625rem - .8rem);
+    }
+}
+
+.restaurants__list__item__bottom__favorite {
+    position: relative;
+
+    #heart-check-1, 
+    #heart-check-2,
+    #heart-check-3, 
+    #heart-check-4 {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+    }
+
+    #heart-check-1:checked ~ .open, 
+    #heart-check-2:checked ~ .open,
+    #heart-check-3:checked ~ .open, 
+    #heart-check-4:checked ~ .open {
+        font-size: 2rem;
+        background: linear-gradient(180deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #heart-check-1:checked ~ .close,
+    #heart-check-2:checked ~ .close,
+    #heart-check-3:checked ~ .close,
+    #heart-check-4:checked ~ .close {
+        display: none;
+    }
+
+    #heart-check-1:not(:checked) ~ .open,
+    #heart-check-2:not(:checked) ~ .open,
+    #heart-check-3:not(:checked) ~ .open,
+    #heart-check-4:not(:checked) ~ .open {
+        display: none;
+    }
+
+    #heart-check-1:not(:checked) ~ .close, 
+    #heart-check-2:not(:checked) ~ .close,
+    #heart-check-3:not(:checked) ~ .close, 
+    #heart-check-4:not(:checked) ~ .close  {
+        font-size: 2rem;
+        display: block;
+    }
+}
+
+.footer {
+    background: $veryDarkGrey;
+    color: white;
+    padding: 1.5625rem;
+
+    @media (min-width: $breakpoint-tablet) {
+        display: flex;
+        justify-content: end;
+        align-items: end;
+    }
+
+    &__logo {
+        height: 1rem;
+        width: auto;
+        margin-bottom: 1rem;
+
+        @media (min-width: $breakpoint-tablet) {
+            order: 2;
+            margin-left: 2rem;
+            margin-bottom: 0;
+        }
+    }
+
+    &__list {
+        @media (min-width: $breakpoint-tablet) {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+    }
+
+    &__list__item {
+        margin-bottom: .5rem;
+
+        @media (min-width: $breakpoint-tablet) {
+            margin-left: 2rem;
+            margin-bottom: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+        }
+
+        i {
+            min-width: 1.3rem;
+            font-size: .8rem;
+        }
+    }
+}
