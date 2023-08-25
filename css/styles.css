@@ -227,6 +227,7 @@ header {
   display: block;
   margin-bottom: 1rem;
   border-radius: 1rem;
+  position: relative;
 }
 @media (min-width: 768px) {
   .restaurants__list__item {
@@ -276,44 +277,47 @@ header {
   margin-right: 0.7625rem;
 }
 
-.restaurants__list__item__bottom__favorite {
-  position: relative;
+.restaurants__list__item__favorite {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(-50%, -50%);
   cursor: pointer;
 }
-.restaurants__list__item__bottom__favorite #heart-check-1,
-.restaurants__list__item__bottom__favorite #heart-check-2,
-.restaurants__list__item__bottom__favorite #heart-check-3,
-.restaurants__list__item__bottom__favorite #heart-check-4 {
+.restaurants__list__item__favorite #heart-check-1,
+.restaurants__list__item__favorite #heart-check-2,
+.restaurants__list__item__favorite #heart-check-3,
+.restaurants__list__item__favorite #heart-check-4 {
   position: absolute;
   top: 0;
   opacity: 0;
 }
-.restaurants__list__item__bottom__favorite #heart-check-1:checked ~ .open,
-.restaurants__list__item__bottom__favorite #heart-check-2:checked ~ .open,
-.restaurants__list__item__bottom__favorite #heart-check-3:checked ~ .open,
-.restaurants__list__item__bottom__favorite #heart-check-4:checked ~ .open {
+.restaurants__list__item__favorite #heart-check-1:checked ~ .open,
+.restaurants__list__item__favorite #heart-check-2:checked ~ .open,
+.restaurants__list__item__favorite #heart-check-3:checked ~ .open,
+.restaurants__list__item__favorite #heart-check-4:checked ~ .open {
   font-size: 2rem;
   background: linear-gradient(180deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.restaurants__list__item__bottom__favorite #heart-check-1:checked ~ .close,
-.restaurants__list__item__bottom__favorite #heart-check-2:checked ~ .close,
-.restaurants__list__item__bottom__favorite #heart-check-3:checked ~ .close,
-.restaurants__list__item__bottom__favorite #heart-check-4:checked ~ .close {
+.restaurants__list__item__favorite #heart-check-1:checked ~ .close,
+.restaurants__list__item__favorite #heart-check-2:checked ~ .close,
+.restaurants__list__item__favorite #heart-check-3:checked ~ .close,
+.restaurants__list__item__favorite #heart-check-4:checked ~ .close {
   display: none;
 }
-.restaurants__list__item__bottom__favorite #heart-check-1:not(:checked) ~ .open,
-.restaurants__list__item__bottom__favorite #heart-check-2:not(:checked) ~ .open,
-.restaurants__list__item__bottom__favorite #heart-check-3:not(:checked) ~ .open,
-.restaurants__list__item__bottom__favorite #heart-check-4:not(:checked) ~ .open {
+.restaurants__list__item__favorite #heart-check-1:not(:checked) ~ .open,
+.restaurants__list__item__favorite #heart-check-2:not(:checked) ~ .open,
+.restaurants__list__item__favorite #heart-check-3:not(:checked) ~ .open,
+.restaurants__list__item__favorite #heart-check-4:not(:checked) ~ .open {
   display: none;
 }
-.restaurants__list__item__bottom__favorite #heart-check-1:not(:checked) ~ .close,
-.restaurants__list__item__bottom__favorite #heart-check-2:not(:checked) ~ .close,
-.restaurants__list__item__bottom__favorite #heart-check-3:not(:checked) ~ .close,
-.restaurants__list__item__bottom__favorite #heart-check-4:not(:checked) ~ .close {
+.restaurants__list__item__favorite #heart-check-1:not(:checked) ~ .close,
+.restaurants__list__item__favorite #heart-check-2:not(:checked) ~ .close,
+.restaurants__list__item__favorite #heart-check-3:not(:checked) ~ .close,
+.restaurants__list__item__favorite #heart-check-4:not(:checked) ~ .close {
   font-size: 2rem;
   display: block;
 }

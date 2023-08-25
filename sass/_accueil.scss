@@ -152,6 +152,7 @@ header {
     display: block;
     margin-bottom: 1rem;
     border-radius: 1rem;
+    position: relative;
 
     @media (min-width: $breakpoint-tablet) {
         flex: 1 1 40%;
@@ -205,8 +206,11 @@ header {
     }
 }
 
-.restaurants__list__item__bottom__favorite {
-    position: relative;
+.restaurants__list__item__favorite {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(-50%, -50%);
     cursor: pointer;
 
     #heart-check-1, 
