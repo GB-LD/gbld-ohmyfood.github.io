@@ -8,7 +8,7 @@ html {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   color: var(--black);
 }
 
@@ -80,9 +80,32 @@ ul {
   background: white;
   padding: 0.75rem 1rem;
   border-radius: 15px;
+  position: relative;
+  overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: end;
+}
+.card .item__price, .restaurant__entrance .restaurant__entrance__list > * .item__price, .restaurant__entrance .restaurant__maincourse__list > * .item__price, .restaurant__entrance .restaurant__desert__list > * .item__price, .restaurant__maincourse .restaurant__entrance__list > * .item__price, .restaurant__maincourse .restaurant__maincourse__list > * .item__price, .restaurant__maincourse .restaurant__desert__list > * .item__price, .restaurant__desert .restaurant__entrance__list > * .item__price, .restaurant__desert .restaurant__maincourse__list > * .item__price, .restaurant__desert .restaurant__desert__list > * .item__price {
+  transition: all 250ms ease-in-out;
+  background: white;
+}
+.card .item__price::after, .restaurant__entrance .restaurant__entrance__list > * .item__price::after, .restaurant__entrance .restaurant__maincourse__list > * .item__price::after, .restaurant__entrance .restaurant__desert__list > * .item__price::after, .restaurant__maincourse .restaurant__entrance__list > * .item__price::after, .restaurant__maincourse .restaurant__maincourse__list > * .item__price::after, .restaurant__maincourse .restaurant__desert__list > * .item__price::after, .restaurant__desert .restaurant__entrance__list > * .item__price::after, .restaurant__desert .restaurant__maincourse__list > * .item__price::after, .restaurant__desert .restaurant__desert__list > * .item__price::after {
+  content: "";
+  position: absolute;
+  left: 170%;
+  bottom: -100%;
+  height: 5rem;
+  width: 5rem;
+  background: #99E2D0;
+  background-image: url(../../assets/images/logo/circle-check-solid\ \(1\).svg);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position-y: 65%;
+  background-position-x: 45%;
+}
+.card:hover .item__price, .restaurant__entrance .restaurant__entrance__list > :hover .item__price, .restaurant__entrance .restaurant__maincourse__list > :hover .item__price, .restaurant__entrance .restaurant__desert__list > :hover .item__price, .restaurant__maincourse .restaurant__entrance__list > :hover .item__price, .restaurant__maincourse .restaurant__maincourse__list > :hover .item__price, .restaurant__maincourse .restaurant__desert__list > :hover .item__price, .restaurant__desert .restaurant__entrance__list > :hover .item__price, .restaurant__desert .restaurant__maincourse__list > :hover .item__price, .restaurant__desert .restaurant__desert__list > :hover .item__price {
+  transform: translateX(-5rem);
 }
 .card h3, .restaurant__entrance .restaurant__entrance__list > * h3, .restaurant__entrance .restaurant__maincourse__list > * h3, .restaurant__entrance .restaurant__desert__list > * h3, .restaurant__maincourse .restaurant__entrance__list > * h3, .restaurant__maincourse .restaurant__maincourse__list > * h3, .restaurant__maincourse .restaurant__desert__list > * h3, .restaurant__desert .restaurant__entrance__list > * h3, .restaurant__desert .restaurant__maincourse__list > * h3, .restaurant__desert .restaurant__desert__list > * h3 {
   flex: 1 1 100%;
@@ -90,6 +113,47 @@ ul {
 }
 .card p, .restaurant__entrance .restaurant__entrance__list > * p, .restaurant__entrance .restaurant__maincourse__list > * p, .restaurant__entrance .restaurant__desert__list > * p, .restaurant__maincourse .restaurant__entrance__list > * p, .restaurant__maincourse .restaurant__maincourse__list > * p, .restaurant__maincourse .restaurant__desert__list > * p, .restaurant__desert .restaurant__entrance__list > * p, .restaurant__desert .restaurant__maincourse__list > * p, .restaurant__desert .restaurant__desert__list > * p {
   font-weight: 300;
+}
+
+.restaurant__header__title__favorite {
+  cursor: pointer;
+}
+.restaurant__header__title__favorite #heart-check-1,
+.restaurant__header__title__favorite #heart-check-2,
+.restaurant__header__title__favorite #heart-check-3,
+.restaurant__header__title__favorite #heart-check-4 {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+.restaurant__header__title__favorite #heart-check-1:checked ~ .open,
+.restaurant__header__title__favorite #heart-check-2:checked ~ .open,
+.restaurant__header__title__favorite #heart-check-3:checked ~ .open,
+.restaurant__header__title__favorite #heart-check-4:checked ~ .open {
+  font-size: 2rem;
+  background: linear-gradient(180deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.restaurant__header__title__favorite #heart-check-1:checked ~ .close,
+.restaurant__header__title__favorite #heart-check-2:checked ~ .close,
+.restaurant__header__title__favorite #heart-check-3:checked ~ .close,
+.restaurant__header__title__favorite #heart-check-4:checked ~ .close {
+  display: none;
+}
+.restaurant__header__title__favorite #heart-check-1:not(:checked) ~ .open,
+.restaurant__header__title__favorite #heart-check-2:not(:checked) ~ .open,
+.restaurant__header__title__favorite #heart-check-3:not(:checked) ~ .open,
+.restaurant__header__title__favorite #heart-check-4:not(:checked) ~ .open {
+  display: none;
+}
+.restaurant__header__title__favorite #heart-check-1:not(:checked) ~ .close,
+.restaurant__header__title__favorite #heart-check-2:not(:checked) ~ .close,
+.restaurant__header__title__favorite #heart-check-3:not(:checked) ~ .close,
+.restaurant__header__title__favorite #heart-check-4:not(:checked) ~ .close {
+  font-size: 2rem;
+  display: block;
 }
 
 /* section header */
@@ -436,7 +500,9 @@ header {
 .restaurant__header__title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 2.5625rem;
+  position: relative;
 }
 @media (min-width: 768px) {
   .restaurant__header__title {

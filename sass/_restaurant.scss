@@ -67,7 +67,9 @@
 .restaurant__header__title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 2.5625rem;
+    position: relative;
 
     @media (min-width: $breakpoint-tablet) {
         justify-content: center;

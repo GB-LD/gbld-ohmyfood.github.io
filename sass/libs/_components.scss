@@ -32,10 +32,41 @@
     background: white;
     padding: .75rem 1rem;
     border-radius: 15px;
+    position: relative;
+    overflow: hidden;
 
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: end;
+
+    .item__price {
+        transition: all 250ms ease-in-out;
+        background: white;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 170%;
+            bottom: -100%;
+            height: 5rem;
+            width: 5rem;
+
+            background: $lightGreen;
+            background-image: url(../../assets/images/logo/circle-check-solid\ \(1\).svg);
+            background-repeat: no-repeat;
+            background-size: 50%;
+            background-position-y: 65%;
+            background-position-x: 45%;
+        }
+    }
+
+    &:hover {
+        .item__price {
+            transform: translateX(-5rem);
+        }
+    }
+
+    
 
     h3 {
         flex: 1 1 100%;
@@ -44,5 +75,51 @@
 
     p {
         font-weight: 300;
+    }
+}
+
+.restaurant__header__title__favorite {
+    cursor: pointer;
+
+    #heart-check-1, 
+    #heart-check-2,
+    #heart-check-3, 
+    #heart-check-4 {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+    }
+
+    #heart-check-1:checked ~ .open, 
+    #heart-check-2:checked ~ .open,
+    #heart-check-3:checked ~ .open, 
+    #heart-check-4:checked ~ .open {
+        font-size: 2rem;
+        background: linear-gradient(180deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #heart-check-1:checked ~ .close,
+    #heart-check-2:checked ~ .close,
+    #heart-check-3:checked ~ .close,
+    #heart-check-4:checked ~ .close {
+        display: none;
+    }
+
+    #heart-check-1:not(:checked) ~ .open,
+    #heart-check-2:not(:checked) ~ .open,
+    #heart-check-3:not(:checked) ~ .open,
+    #heart-check-4:not(:checked) ~ .open {
+        display: none;
+    }
+
+    #heart-check-1:not(:checked) ~ .close, 
+    #heart-check-2:not(:checked) ~ .close,
+    #heart-check-3:not(:checked) ~ .close, 
+    #heart-check-4:not(:checked) ~ .close  {
+        font-size: 2rem;
+        display: block;
     }
 }
