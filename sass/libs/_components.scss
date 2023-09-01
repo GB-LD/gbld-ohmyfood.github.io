@@ -46,6 +46,11 @@
 
     p {
         font-weight: 300;
+        flex-shrink: 6;
+    }
+
+    .item__title {
+        flex: 6;
     }
 
     .item__price {
@@ -75,6 +80,22 @@
         .item__price {
             background: white;
             transform: translateX(-4rem);
+        }
+
+        .item__title {
+            @media screen and (max-width: 330px) {
+                max-width: 150px;
+            }
+            @media screen and (min-width: 331px) and (max-width: 375px) {
+                max-width: 200px;
+            }
+        }
+
+        p {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
         }
     }
 }

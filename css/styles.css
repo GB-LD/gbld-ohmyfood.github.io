@@ -92,6 +92,10 @@ ul {
 }
 .card p, .restaurant__entrance .restaurant__entrance__list > * p, .restaurant__entrance .restaurant__maincourse__list > * p, .restaurant__entrance .restaurant__desert__list > * p, .restaurant__maincourse .restaurant__entrance__list > * p, .restaurant__maincourse .restaurant__maincourse__list > * p, .restaurant__maincourse .restaurant__desert__list > * p, .restaurant__desert .restaurant__entrance__list > * p, .restaurant__desert .restaurant__maincourse__list > * p, .restaurant__desert .restaurant__desert__list > * p {
   font-weight: 300;
+  flex-shrink: 6;
+}
+.card .item__title, .restaurant__entrance .restaurant__entrance__list > * .item__title, .restaurant__entrance .restaurant__maincourse__list > * .item__title, .restaurant__entrance .restaurant__desert__list > * .item__title, .restaurant__maincourse .restaurant__entrance__list > * .item__title, .restaurant__maincourse .restaurant__maincourse__list > * .item__title, .restaurant__maincourse .restaurant__desert__list > * .item__title, .restaurant__desert .restaurant__entrance__list > * .item__title, .restaurant__desert .restaurant__maincourse__list > * .item__title, .restaurant__desert .restaurant__desert__list > * .item__title {
+  flex: 6;
 }
 .card .item__price, .restaurant__entrance .restaurant__entrance__list > * .item__price, .restaurant__entrance .restaurant__maincourse__list > * .item__price, .restaurant__entrance .restaurant__desert__list > * .item__price, .restaurant__maincourse .restaurant__entrance__list > * .item__price, .restaurant__maincourse .restaurant__maincourse__list > * .item__price, .restaurant__maincourse .restaurant__desert__list > * .item__price, .restaurant__desert .restaurant__entrance__list > * .item__price, .restaurant__desert .restaurant__maincourse__list > * .item__price, .restaurant__desert .restaurant__desert__list > * .item__price {
   background: none;
@@ -117,6 +121,22 @@ ul {
 .card:hover .item__price, .restaurant__entrance .restaurant__entrance__list > :hover .item__price, .restaurant__entrance .restaurant__maincourse__list > :hover .item__price, .restaurant__entrance .restaurant__desert__list > :hover .item__price, .restaurant__maincourse .restaurant__entrance__list > :hover .item__price, .restaurant__maincourse .restaurant__maincourse__list > :hover .item__price, .restaurant__maincourse .restaurant__desert__list > :hover .item__price, .restaurant__desert .restaurant__entrance__list > :hover .item__price, .restaurant__desert .restaurant__maincourse__list > :hover .item__price, .restaurant__desert .restaurant__desert__list > :hover .item__price {
   background: white;
   transform: translateX(-4rem);
+}
+@media screen and (max-width: 330px) {
+  .card:hover .item__title, .restaurant__entrance .restaurant__entrance__list > :hover .item__title, .restaurant__entrance .restaurant__maincourse__list > :hover .item__title, .restaurant__entrance .restaurant__desert__list > :hover .item__title, .restaurant__maincourse .restaurant__entrance__list > :hover .item__title, .restaurant__maincourse .restaurant__maincourse__list > :hover .item__title, .restaurant__maincourse .restaurant__desert__list > :hover .item__title, .restaurant__desert .restaurant__entrance__list > :hover .item__title, .restaurant__desert .restaurant__maincourse__list > :hover .item__title, .restaurant__desert .restaurant__desert__list > :hover .item__title {
+    max-width: 150px;
+  }
+}
+@media screen and (min-width: 331px) and (max-width: 375px) {
+  .card:hover .item__title, .restaurant__entrance .restaurant__entrance__list > :hover .item__title, .restaurant__entrance .restaurant__maincourse__list > :hover .item__title, .restaurant__entrance .restaurant__desert__list > :hover .item__title, .restaurant__maincourse .restaurant__entrance__list > :hover .item__title, .restaurant__maincourse .restaurant__maincourse__list > :hover .item__title, .restaurant__maincourse .restaurant__desert__list > :hover .item__title, .restaurant__desert .restaurant__entrance__list > :hover .item__title, .restaurant__desert .restaurant__maincourse__list > :hover .item__title, .restaurant__desert .restaurant__desert__list > :hover .item__title {
+    max-width: 200px;
+  }
+}
+.card:hover p, .restaurant__entrance .restaurant__entrance__list > :hover p, .restaurant__entrance .restaurant__maincourse__list > :hover p, .restaurant__entrance .restaurant__desert__list > :hover p, .restaurant__maincourse .restaurant__entrance__list > :hover p, .restaurant__maincourse .restaurant__maincourse__list > :hover p, .restaurant__maincourse .restaurant__desert__list > :hover p, .restaurant__desert .restaurant__entrance__list > :hover p, .restaurant__desert .restaurant__maincourse__list > :hover p, .restaurant__desert .restaurant__desert__list > :hover p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 
 .restaurant__header__title__favorite {
@@ -642,5 +662,13 @@ header {
   75% {
     transform: rotate(-70deg);
     animation-timing-function: ease-in;
+  }
+}
+@keyframes loadingMenu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }/*# sourceMappingURL=styles.css.map */
