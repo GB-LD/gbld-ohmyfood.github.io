@@ -228,7 +228,7 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: loadingPage 4000ms;
+  animation: loadingPage 4000ms forwards;
 }
 
 .loader-text {
@@ -243,7 +243,7 @@ ul {
   height: 10px;
   border-radius: 5px;
   background-color: white;
-  animation: loader-bar-animation 3s ease-in-out infinite;
+  animation: loader-bar-animation 2s ease-in-out infinite;
 }
 
 /* section header */
@@ -661,15 +661,12 @@ header {
 }
 @keyframes loader-bar-animation {
   0% {
-    /* transform: translateX(-100%) rotate(270deg); */
     transform: translateX(-100%);
   }
   50% {
-    /* transform: translateX(100%) rotate(-90deg); */
     transform: translateX(100%);
   }
   100% {
-    /* transform: translateX(-100%) rotate(270deg); */
     transform: translateX(-100%);
   }
 }
