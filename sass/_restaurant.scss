@@ -116,4 +116,16 @@
         @extend .card;
         margin-bottom: 1rem;
     }
+
+    .restaurant__entrance__list > * {
+        animation: loadingMenu 1000ms forwards;
+    }
+
+    .restaurant__maincourse__list > * {
+        animation: loadingMenu 1000ms 1000ms both;
+    }
+
+    .restaurant__desert__list > * {
+        animation: loadingMenu 1000ms 2000ms both;
+    }
 }

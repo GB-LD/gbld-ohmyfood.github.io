@@ -83,6 +83,7 @@ ul {
   border-radius: 15px;
   position: relative;
   overflow: hidden;
+  opacity: 0;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -113,7 +114,7 @@ ul {
   width: 6rem;
   transform: translateY(-50%);
   background: #99E2D0;
-  background-image: url(../../assets/images/logo/circle-check-solid\ \(1\).svg);
+  background-image: url(/assets/images/logo/circle-check-solid\ \(1\).svg);
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: 15%;
@@ -130,6 +131,11 @@ ul {
 @media screen and (min-width: 331px) and (max-width: 375px) {
   .card:hover .item__title, .restaurant__entrance .restaurant__entrance__list > :hover .item__title, .restaurant__entrance .restaurant__maincourse__list > :hover .item__title, .restaurant__entrance .restaurant__desert__list > :hover .item__title, .restaurant__maincourse .restaurant__entrance__list > :hover .item__title, .restaurant__maincourse .restaurant__maincourse__list > :hover .item__title, .restaurant__maincourse .restaurant__desert__list > :hover .item__title, .restaurant__desert .restaurant__entrance__list > :hover .item__title, .restaurant__desert .restaurant__maincourse__list > :hover .item__title, .restaurant__desert .restaurant__desert__list > :hover .item__title {
     max-width: 200px;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 414px) {
+  .card:hover .item__title, .restaurant__entrance .restaurant__entrance__list > :hover .item__title, .restaurant__entrance .restaurant__maincourse__list > :hover .item__title, .restaurant__entrance .restaurant__desert__list > :hover .item__title, .restaurant__maincourse .restaurant__entrance__list > :hover .item__title, .restaurant__maincourse .restaurant__maincourse__list > :hover .item__title, .restaurant__maincourse .restaurant__desert__list > :hover .item__title, .restaurant__desert .restaurant__entrance__list > :hover .item__title, .restaurant__desert .restaurant__maincourse__list > :hover .item__title, .restaurant__desert .restaurant__desert__list > :hover .item__title {
+    max-width: 250px;
   }
 }
 .card:hover p, .restaurant__entrance .restaurant__entrance__list > :hover p, .restaurant__entrance .restaurant__maincourse__list > :hover p, .restaurant__entrance .restaurant__desert__list > :hover p, .restaurant__maincourse .restaurant__entrance__list > :hover p, .restaurant__maincourse .restaurant__maincourse__list > :hover p, .restaurant__maincourse .restaurant__desert__list > :hover p, .restaurant__desert .restaurant__entrance__list > :hover p, .restaurant__desert .restaurant__maincourse__list > :hover p, .restaurant__desert .restaurant__desert__list > :hover p {
@@ -181,17 +187,18 @@ ul {
 }
 
 .loader {
-  position: absolute;
+  position: fixed;
   z-index: 100;
   top: 0;
-  height: 0%;
+  bottom: 0;
+  height: 100%;
   width: 100%;
   background: rgba(147, 86, 220, 0.8);
   opacity: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: loadingPage 3000ms;
+  animation: loadingPage 4000ms forwards;
 }
 
 /* section header */
@@ -583,13 +590,22 @@ header {
 .restaurant__entrance .restaurant__entrance__list > *, .restaurant__entrance .restaurant__maincourse__list > *, .restaurant__entrance .restaurant__desert__list > *, .restaurant__maincourse .restaurant__entrance__list > *, .restaurant__maincourse .restaurant__maincourse__list > *, .restaurant__maincourse .restaurant__desert__list > *, .restaurant__desert .restaurant__entrance__list > *, .restaurant__desert .restaurant__maincourse__list > *, .restaurant__desert .restaurant__desert__list > * {
   margin-bottom: 1rem;
 }
+.restaurant__entrance .restaurant__entrance__list > *, .restaurant__maincourse .restaurant__entrance__list > *, .restaurant__desert .restaurant__entrance__list > * {
+  animation: loadingMenu 1000ms forwards;
+}
+.restaurant__entrance .restaurant__maincourse__list > *, .restaurant__maincourse .restaurant__maincourse__list > *, .restaurant__desert .restaurant__maincourse__list > * {
+  animation: loadingMenu 1000ms 1000ms both;
+}
+.restaurant__entrance .restaurant__desert__list > *, .restaurant__maincourse .restaurant__desert__list > *, .restaurant__desert .restaurant__desert__list > * {
+  animation: loadingMenu 1000ms 2000ms both;
+}
 
 @keyframes loadingPage {
   0% {
     height: 100%;
     opacity: 1;
   }
-  90% {
+  99% {
     height: 100%;
     opacity: 1;
   }
@@ -599,7 +615,7 @@ header {
   }
 }
 .newtons-cradle {
-  --uib-size: 100px;
+  --uib-size: 150px;
   --uib-speed: 1.2s;
   --uib-color: rgba(255,121,218,1);
   position: relative;
@@ -626,14 +642,15 @@ header {
   height: 25%;
   border-radius: 50%;
   background-color: var(--uib-color);
+  border: 1px solid black;
 }
 
 .newtons-cradle__dot:first-child {
-  animation: swing var(--uib-speed) linear infinite;
+  animation: swing var(--uib-speed) 500ms linear infinite;
 }
 
 .newtons-cradle__dot:last-child {
-  animation: swing2 var(--uib-speed) linear infinite;
+  animation: swing2 var(--uib-speed) 500ms linear infinite;
 }
 
 @keyframes swing {
