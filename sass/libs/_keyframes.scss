@@ -15,6 +15,23 @@
     }
 }
 
+@keyframes loader-bar-animation {
+    0% {
+      /* transform: translateX(-100%) rotate(270deg); */
+      transform: translateX(-100%);
+    }
+  
+    50% {
+      /* transform: translateX(100%) rotate(-90deg); */
+      transform: translateX(100%);
+    }
+  
+    100% {
+      /* transform: translateX(-100%) rotate(270deg); */
+      transform: translateX(-100%);
+    }
+  }
+
 .newtons-cradle {
     --uib-size: 150px;
     --uib-speed: 1.2s;
